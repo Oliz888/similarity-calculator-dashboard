@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<p>How to Make Music Feature Explorer and Song Similarity Calculator in Streamlit Executive Summary Welcome to the Music Feature Explorer and Song Similarity Calculator, an innovative data visualization project that dives deep into the world of music. This report provides a comprehensive “behind-the-scenes” look at the project, targeted at the data visualization community. Here is the link to my dashboard. Project Context Music is a universal language, stirring emotions, triggering memories, and shaping collective sentiments. The fusion of lyrics and chord progressions forms the essence of a song’s ambiance, making it vital for academic study and the music industry. This project bridges the gap between the subjective interpretation of music and quantitative analysis. Our project employs interactive visualizations to explore and understand the complex musical and lyrical elements of songs. We examine key features such as acousticness, speechiness, loudness, key, energy, danceability, tempo, valence, liveness, instrumentalness, and time signature. These features offer a nuanced perspective on the characteristics of music, from its acoustic nature to its emotional impact. In essence, this project aims to uncover the science behind the art of music, shedding light on how various elements converge to influence listeners. Target Audience Our primary audience includes Record Labels, Musicians, AI-Powered Music Creation platforms, and music enthusiasts. - Record Labels: They benefit from data-driven insights into music trends and listener preferences, aiding in scouting and signing artists whose music resonates emotionally. - Musicians: Artists can explore music to find inspiration, understand patterns, and stay connected with evolving trends. - AI-Powered Music Creation: This sector can use our rich data repository to develop algorithms for creating targeted music content, aligning with specific moods and themes. - Music Enthusiasts: Casual listeners can explore and gain a deeper understanding of their favorite songs. This app caters to a diverse audience at the intersection of technology, creativity, and the music business, providing insights into the interplay between musical elements and emotional impact. Data Sources Source Raw data comes from two open datasets: Spotify’s million song dataset and chord progression assistant. Here is the data used for this blog. Collection Methods The data collection process involved merging two datasets together using the song names, after combining two datasets, there are 2673 section of songs, which include text data (‘lyrics’) and other song features in numeric format (‘chord’, ‘tempo’, ‘key’), object format (‘type’), and characteristics assigned by sportify algorithm (‘danceability’ ‘energy’ ‘loudness’ ‘mode’ ‘speechiness’ ‘acousticness’ ‘instrumentalness’ ‘liveness’ ‘valence’). Biases/Sampling While extensive efforts were made to assemble a diverse collection of music samples, it’s important to acknowledge that the dataset may still carry certain biases. These biases could be influenced by factors such as the popularity of specific music genres or the availability of music data for certain songs. It’s worth noting that the dataset’s size, while significant, may not comprehensively represent the entire spectrum of music distribution. Users should exercise caution and consider these potential biases when interpreting the results generated by the Song Similarity Calculator. In addition to analyzing audio features, you can also use algorithms to automatically assign lyrics to different sections of a song, such as verses and choruses. This process involves segmenting the lyrics based on patterns in the text or by leveraging natural language processing techniques. The resulting sections can provide valuable insights into the song’s structure, making it easier to identify and analyze specific parts of the composition. Keep in mind that these assignments are algorithmic and may not always align perfectly with the artist’s intended structure. Nonetheless, they offer a useful way to explore songs in more detail. Descriptive Statistics The data collection process involved merging two datasets together using the song names, after combining two datasets, there are 2673 section of songs, which include text data (‘lyrics’) and other song features in numeric format (‘chord’, ‘tempo’, ‘key’), object format (‘type’), and characteristics assigned by sportify algorithm (‘danceability’ ‘energy’ ‘loudness’ ‘mode’ ‘speechiness’ ‘acousticness’ ‘instrumentalness’ ‘liveness’ ‘valence’). The distribution of features varies across different tracks, enabling a comprehensive analysis of music characteristics. More detailed definition of each variable can be found here.</p>
+<p>Data Cleaning Methods &amp; Identified Issues Data cleaning methods were applied to ensure data accuracy and consistency. Missing values were handled, outliers were addressed, and data types were standardized. Despite these efforts, some issues, such as missing lyrics for certain tracks, were identified. Privacy Privacy and data protection were paramount considerations in this project. Personal and sensitive information was not collected, ensuring compliance with privacy regulations. Technologies/Platforms Used - Streamlit: Used for creating interactive web applications with Python. - Pandas: Employed for data manipulation and analysis. - Scikit-learn: Used for machine learning tasks, including cosine similarity calculations. - Plotly and Matplotlib: Utilized for data visualization. - Natural Language Toolkit (NLTK): Applied for text processing and analysis. Summary of Analysis The goal of the Music Feature Explorer and Song Similarity Calculator is to provide a holistic view of music through data-driven insights. Key variables, including acousticness, speechiness, loudness, key, energy, danceability, tempo, valence, liveness, instrumentalness, and time signature, offer a comprehensive understanding of a song’s characteristics. Key Features and Code 1. Numerical Feature Exploration Page: Users can explore variables like key, tempo, and danceability through interactive pie charts, providing insights into the distribution of these features across different songs.</p>
+<p>• Pie Chart: for pie chart, we have 3 variables that can be selected. • Bar Plot: for the bar plot, we can see how different variables are distribution against each other.</p>
+<ol start="2" type="1">
+<li><p>Textual Feature Exploration Page: This section offers textual similarity analysis, sentimental analysis, and word clouds, allowing users to delve into the thematic and emotional content of lyrics.</p></li>
+<li><p>Song Similarity Feature Calculator Page: Users can calculate and visualize the similarity between two songs using a sophisticated algorithm and radar graphs. This feature assists in understanding how different songs relate to each other. These features cater to a wide range of users, from casual listeners to industry professionals, seeking to unravel the intricate tapestry of music. Conclusion The Music Feature Explorer and Song Similarity Calculator project offer a unique and insightful perspective on the world of music. By quantifying and visualizing various musical and lyrical elements, this project helps individuals and professionals alike gain a deeper understanding of the emotional and structural aspects of songs. Whether you’re exploring music for inspiration or making data-driven decisions in the music industry, our project empowers you to appreciate the art and science of music in a whole new way.</p></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
