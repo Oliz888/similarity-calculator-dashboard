@@ -61,16 +61,16 @@ The goal of the Music Feature Explorer and Song Similarity Calculator is to prov
     - **Bar Plot**: for the bar plot, we can see how different variables are distribution
 against each other.
 
-image(Image.open('pic/dashboard 1'))
+![dashoard 1](https://github.com/Oliz888/similarity-calculator-dashboard/blob/main/pic/dashboard%201.png)
 
 2. **Textual Feature Exploration Page**: This section offers textual similarity analysis, sentimental analysis, and word clouds, allowing users to delve into the thematic and emotional content of lyrics.
 
-image(Image.open('pic/dashboard 2'))
+![dashoard 2](https://github.com/Oliz888/similarity-calculator-dashboard/blob/main/pic/dashboard%202.png)
 
 3. **Song Similarity Feature Calculator Page**: Users can calculate and visualize the similarity between two songs using a sophisticated algorithm and radar graphs. This feature assists in understanding how different songs relate to each other.
  These features cater to a wide range of users, from casual listeners to industry professionals, seeking to unravel the intricate tapestry of music.
 
-image(Image.open('pic/dashboard 3'))
+![dashoard 3](https://github.com/Oliz888/similarity-calculator-dashboard/blob/main/pic/dashboard%203.png)
 
 ## Conclusion
 The Music Feature Explorer and Song Similarity Calculator project offer a unique and insightful perspective on the world of music. By quantifying and visualizing various musical and lyrical elements, this project helps individuals and professionals alike gain a deeper understanding of the emotional and structural aspects of songs. Whether you’re exploring music for inspiration or making data-driven decisions in the music industry, our project empowers you to appreciate the art and science of music in a whole new way.
